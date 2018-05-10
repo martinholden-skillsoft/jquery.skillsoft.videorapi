@@ -49,9 +49,9 @@ module.exports = function(grunt) {
       src: {
         src: ['src/**/*.js']
       },
-      //test: {
-      //  src: ['test/**/*.js']
-      //},
+      test: {
+        src: ['test/**/*.js']
+      },
     },
     watch: {
       gruntfile: {
@@ -67,6 +67,16 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       },
     },
+	/*
+	  connect: {
+		server: {
+		  options: {
+			port: 8000,
+			base: '.'
+		  }
+		}
+	  },
+*/
   });
 
   // These plugins provide necessary tasks.
@@ -76,9 +86,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  //grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task.
-  //grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
-  grunt.registerTask('default', ['jshint', 'clean', 'concat', 'uglify']);
-
+  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
 };
