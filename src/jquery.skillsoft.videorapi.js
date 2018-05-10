@@ -5,7 +5,8 @@
  * Copyright (c) 2018 Martin Holden
  * Licensed under the MIT license.
  */
-; (function ($, crypto, window, document, skillsoft, undefined) {
+ 
+;(function ($, crypto, window, document, skillsoft, undefined) {
     'use strict';
 
     var API,
@@ -127,6 +128,8 @@
             // Bind methods.
             this.update = __bind(this.update, this);
 
+			this.resetDefaults = __bind(this.resetDefaults, this);
+			
             //Bind RAPI
             this.login = __bind(this.login, this);
             this.logout = __bind(this.logout, this);
@@ -146,6 +149,12 @@
             }
         };
 
+		VIDEORAPI.prototype.resetDefaults = function () {
+			this.options = {};
+
+            // Extend default options.
+            $.extend(true, this.options, __defaultOptions);
+        };
 
         //RAPI Commands - authSharedSecret
         VIDEORAPI.prototype.login = function (username) {
