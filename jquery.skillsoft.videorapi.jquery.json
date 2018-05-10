@@ -2,7 +2,7 @@
   "name": "jquery.skillsoft.videorapi",
   "title": "jQuery Skillsoft Video Restful API Plugin",
   "description": "jQuery 3.x plugin for using Skillsoft Video Restful API",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi",
   "author": {
     "name": "Martin Holden",
@@ -23,5 +23,9 @@
     "jquery": ">=3.2.1",
 	"crypto-js": ">=3.1.9-1"
   },
-  "keywords": []
+  "keywords": [
+        "skillsoft",
+        "rapi",
+		"rapivideo"
+    ]
 }
