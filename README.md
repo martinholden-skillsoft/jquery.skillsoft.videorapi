@@ -33,7 +33,7 @@ In your web page:
         }
 
         //Initialise the Plugin
-        var rapi = skillsoft.rapi(options);
+        var rapi = skillsoft.videorapi(options);
 
         //Create object to contain the username, this object will be extended with the response data to the login request
         var rapiInfo = {
