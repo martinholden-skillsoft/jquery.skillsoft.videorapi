@@ -1,7 +1,7 @@
-/*! jQuery Skillsoft Video Restful API Plugin - v1.0.0 - 2018-05-10
+/*! jQuery Skillsoft Video Restful API Plugin - v1.0.1 - 2018-05-10
 * https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi
 * Copyright (c) 2018 Martin Holden; Licensed MIT */
-; (function ($, crypto, window, document, skillsoft, undefined) {
+;(function ($, crypto, window, document, skillsoft, undefined) {
     'use strict';
 
     var API,
@@ -13,7 +13,7 @@
         __checksharedSecretOptions,
         __base;
 
-    var VERSION = '1.0.0';
+    var VERSION = '1.0.1';
 
     //Enable checking for null length options
     if (!Object.keys) {
@@ -123,6 +123,8 @@
             // Bind methods.
             this.update = __bind(this.update, this);
 
+			this.resetDefaults = __bind(this.resetDefaults, this);
+			
             //Bind RAPI
             this.login = __bind(this.login, this);
             this.logout = __bind(this.logout, this);
@@ -142,6 +144,12 @@
             }
         };
 
+		VIDEORAPI.prototype.resetDefaults = function () {
+			this.options = {};
+
+            // Extend default options.
+            $.extend(true, this.options, __defaultOptions);
+        };
 
         //RAPI Commands - authSharedSecret
         VIDEORAPI.prototype.login = function (username) {
