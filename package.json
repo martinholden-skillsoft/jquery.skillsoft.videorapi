@@ -1,15 +1,35 @@
 {
-  "name": "jquery-skillsoft-videorapi",
-  "version": "0.0.0-ignored",
+  "name": "jquery.skillsoft.videorapi",
+  "title": "jQuery Skillsoft Video Restful API Plugin",
+  "description": "jQuery 3.x plugin for using Skillsoft Video Restful API",
+  "version": "1.0.1",
+  "main": "dist/jquery.skillsoft.videorapi.js",
+  "homepage": "https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi",
+  "author": {
+    "name": "Martin Holden",
+    "email": "martin.holden@skillsoft.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi.git"
+  },
+  "bugs": "https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi/issues",
+  "license": "MIT",
+  "keywords": [
+    "skillsoft",
+    "rapi",
+    "rapivideo"
+  ],
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "grunt connect qunit"
+    "build": "npm install && grunt",
+    "test": "grunt qunit"
   },
   "dependencies": {
-    "jquery": ">=3.2.1",
-    "crypto-js": ">=3.1.9-1"
+    "crypto-js": ">=3.1.9-1",
+    "jquery": ">=3.2.1"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.10.0",
