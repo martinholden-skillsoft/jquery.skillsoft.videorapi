@@ -1,4 +1,4 @@
-/*! jQuery Skillsoft Video Restful API Plugin - v1.0.1 - 2018-05-10
+/*! jQuery Skillsoft Video Restful API Plugin - v1.0.1 - 2018-05-21
 * https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi
 * Copyright (c) 2018 Martin Holden; Licensed MIT */
 ;(function ($, crypto, window, document, skillsoft, undefined) {
