@@ -70,7 +70,7 @@
         try {
             var error = JSON.parse(jqXHR.responseText);
             if ("errorCode" in error) {
-                deferred.reject(jqXHR, textStatus, errorThrown, error.errorCode);
+                deferred.reject(jqXHR, textStatus, errorThrown, error.errorCode, error);
             } else {
                 deferred.reject(jqXHR, textStatus, errorThrown);
             }

@@ -1,4 +1,4 @@
-/*! jQuery Skillsoft Video Restful API Plugin - v1.0.1 - 2018-05-21
+/*! jQuery Skillsoft Video Restful API Plugin - v1.0.2 - 2018-08-30
 * https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi
 * Copyright (c) 2018 Martin Holden; Licensed MIT */
 ;(function ($, crypto, window, document, skillsoft, undefined) {
@@ -13,7 +13,7 @@
         __checksharedSecretOptions,
         __base;
 
-    var VERSION = '1.0.1';
+    var VERSION = '1.0.2';
 
     //Enable checking for null length options
     if (!Object.keys) {
@@ -65,7 +65,7 @@
         try {
             var error = JSON.parse(jqXHR.responseText);
             if ("errorCode" in error) {
-                deferred.reject(jqXHR, textStatus, errorThrown, error.errorCode);
+                deferred.reject(jqXHR, textStatus, errorThrown, error.errorCode, error);
             } else {
                 deferred.reject(jqXHR, textStatus, errorThrown);
             }
