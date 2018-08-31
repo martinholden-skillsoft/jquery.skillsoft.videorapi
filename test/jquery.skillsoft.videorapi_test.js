@@ -7,6 +7,7 @@ QUnit.test('Instantiate no options', function (assert) {
 	assert.ok(skillsoft.videorapi, 'registered');
 
 	var defaults = {
+		"HashkeyProxyContentType": "application/x-www-form-urlencoded",
 		"RAPIVersion": "v3",
 		"loginpath": "/skillportfe/rapi/video/authSharedSecret/login",
 		"logoutpath": "/skillportfe/rapi/video/authSharedSecret/logout",
@@ -28,6 +29,7 @@ QUnit.test('Instantiate with options', function (assert) {
 		hostname: 'HOSTNAME',
 		sharedsecret: 'SHAREDSECRET',
 		HashkeyProxy: 'HASHKEYPROXY',
+		HashkeyProxyContentType: 'CONTENTTYPE',
 		RAPIVersion: 'RAPIVERSION',
 		loginpath: 'LOGINPATH',
 		logoutpath: 'LOGOUTPATH',
@@ -46,6 +48,7 @@ QUnit.test('Update options', function (assert) {
 	assert.ok(skillsoft.videorapi, 'registered');
 
 	var defaults = {
+		"HashkeyProxyContentType": "application/x-www-form-urlencoded",
 		"RAPIVersion": "v3",
 		"loginpath": "/skillportfe/rapi/video/authSharedSecret/login",
 		"logoutpath": "/skillportfe/rapi/video/authSharedSecret/logout",
@@ -64,6 +67,7 @@ QUnit.test('Update options', function (assert) {
 	var afterUpdate = {
 		"hostname": "HOSTNAME",
 		"sharedsecret": "SHAREDSECRET",
+		"HashkeyProxyContentType": "application/x-www-form-urlencoded",
 		"RAPIVersion": "v3",
 		"loginpath": "/skillportfe/rapi/video/authSharedSecret/login",
 		"logoutpath": "/skillportfe/rapi/video/authSharedSecret/logout",

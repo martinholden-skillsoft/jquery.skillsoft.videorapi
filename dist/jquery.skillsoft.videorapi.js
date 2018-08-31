@@ -1,4 +1,4 @@
-/*! jQuery Skillsoft Video Restful API Plugin - v1.0.2 - 2018-08-30
+/*! jQuery Skillsoft Video Restful API Plugin - v1.0.3 - 2018-08-31
 * https://github.com/martinholden-skillsoft/jquery.skillsoft.videorapi
 * Copyright (c) 2018 Martin Holden; Licensed MIT */
 ;(function ($, crypto, window, document, skillsoft, undefined) {
@@ -13,7 +13,7 @@
         __checksharedSecretOptions,
         __base;
 
-    var VERSION = '1.0.2';
+    var VERSION = '1.0.3';
 
     //Enable checking for null length options
     if (!Object.keys) {
@@ -100,6 +100,7 @@
         hostname: undefined,
         sharedsecret: undefined,
         HashkeyProxy: undefined,
+		HashkeyProxyContentType: 'application/x-www-form-urlencoded',
         RAPIVersion: 'v3',
         loginpath: '/skillportfe/rapi/video/authSharedSecret/login',
         logoutpath: '/skillportfe/rapi/video/authSharedSecret/logout',
@@ -194,6 +195,8 @@
             } else {
                 //Call the proxy to get the hashkey DO THIS SYNC
                 // Settings for Jquery Ajax
+				// If you need to set the Content-Type explicitly to application/json and teh call is crossDomain
+				// JQuery will now send a pre-flight request - see http://api.jquery.com/jquery.ajax/
                 var proxysettings = {
                     async: true,
                     crossDomain: true,
@@ -201,6 +204,7 @@
                     method: "POST",
                     headers: {
                         "accept": "application/json",
+                        "Content-Type": this.options.HashkeyProxyContentType
                     },
                     processData: false,
                     data: JSON.stringify({ username: username, timestamp: _timeStamp, hostname: this.options.hostname }),
